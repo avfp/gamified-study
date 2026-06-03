@@ -7,7 +7,7 @@ interface DashboardProps {
   streak: number; 
 }
 
-export default function Dashboard({ totalXP }: DashboardProps) {
+export default function Dashboard({ totalXP, streak }: DashboardProps) {
   // For now, let's keep the Level logic simple:
   // Level = Total XP / 100, rounded down, minimum 1.
   const level = Math.floor(totalXP / 100) + 1;
@@ -34,6 +34,11 @@ export default function Dashboard({ totalXP }: DashboardProps) {
       {/* Progress Bar Section (The actual implementation) */}
       <div className="p-4 bg-gray-50 rounded-lg border">
         <ProgressBar currentXP={totalXP} />
+      </div>
+
+      {/* Streak Display */}
+      <div className="p-4 bg-yellow-100 rounded-lg border mt-4">
+        <p className="text-lg font-bold text-yellow-900">Current Streak: {streak} days</p>
       </div>
     </div>
   );
