@@ -1,7 +1,8 @@
+'use client';
 import React, { useState } from 'react' ;
 import { calculateXP } from '../lib/xpLogic' ;
 
-export default function InputForm () {
+export default function InputForm ({    onAddXP} : { onAddXP: (xp: number) => void }) {
     const [minutes, setMinutes] = useState(0);
     const [difficulty, setDifficulty] = useState(1);
     const [earnedXP, setEarnedXP] = useState<number | null>(null);
@@ -9,8 +10,8 @@ export default function InputForm () {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         //streak is 0 for now
-        const result = calculateXP(minutes, difficulty, 0);
-        setEarnedXP(result);
+        const earned = calculateXP(minutes, difficulty, 0);
+        onAddXP(earned);
     };
 
     return (
