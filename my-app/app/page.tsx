@@ -129,12 +129,12 @@ export default function Home() {
       {/* Header */}
       <header className="flex justify-between items-center mb-8">
         <div>
-          <h1 className="text-4xl font-bold text-bluegray-900"> M.A.R.G.O.</h1>
+          <h1 className="text-4xl font-bold text-gray-900"> M.A.R.G.O.</h1>
           <p className="text-gray-600 mt-1">Hi, <span className="font-bold text-sage-600">{currentUser.userName}</span>!</p>
         </div>
         <button
           onClick={handleLogout}
-          className="bg-bluegray-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-lg transition"
+          className="bg-gray-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-lg transition"
         >
           logout
         </button>
