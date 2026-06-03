@@ -1,6 +1,6 @@
-export const calculateNewStreak = (currentStreak: number, lastActivityDate: Date, currentDate: Date): number => {
+export const calculateNewStreak = (currentStreak: number, lastActivityDate: Date | null, currentDate: Date): number => {
     // Calculate the difference in days between the last activity and current date
-    const timeDifference = currentDate.getTime() - lastActivityDate.getTime();
+    const timeDifference = currentDate.getTime() - (lastActivityDate ? lastActivityDate.getTime() : new Date(0).getTime());
     const dayDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
 
     if (dayDifference === 1) {

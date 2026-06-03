@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
-import ProgressBar from './ProgressBar'; // <-- Import the new component
+import ProgressBar from './ProgressBar';        
 
 interface DashboardProps {
   totalXP: number;
+  streak: number; 
 }
 
 export default function Dashboard({ totalXP }: DashboardProps) {
@@ -13,7 +14,9 @@ export default function Dashboard({ totalXP }: DashboardProps) {
 
   return (
     <div className="p-6 border rounded-xl shadow-md bg-white">
-      {/* Top Section */}
+      {/* Top Section ... keep the existing levela nd total xp code*/}
+
+      {/* Stats Header */}
       <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b">
         <h1 className="text-2xl font-extrabold text-gray-900">Your Stats</h1>
         <div className="flex gap-4">
@@ -35,3 +38,4 @@ export default function Dashboard({ totalXP }: DashboardProps) {
     </div>
   );
 }
+     
