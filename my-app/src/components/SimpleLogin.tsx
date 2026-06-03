@@ -28,7 +28,7 @@ export default function SimpleLogin({ onLogin }: LoginProps) {
         {!showForm ? (
           <button
             onClick={() => setShowForm(true)}
-            className="w-full bg-sage-500 hover:bg-sage-600 text-cream-600 font-bold py-3 px-4 rounded-lg mb-3 transition"
+            className="w-full bg-sage-500 hover:bg-gray-300 text-cream-600 font-bold py-3 px-4 rounded-lg mb-3 transition"
           >
             Get Started
           </button>
