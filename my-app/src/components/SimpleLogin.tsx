@@ -20,15 +20,15 @@ export default function SimpleLogin({ onLogin }: LoginProps) {
   };
 
   return (
-    <div className="fixed inset-0 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+    <div className="fixed inset-0 bg-gradient-to-br from-sage-500 to-cream-600 flex items-center justify-center">
       <div className="bg-white p-8 rounded-xl shadow-2xl max-w-md w-full mx-4">
-        <h1 className="text-4xl font-bold text-center mb-2">🎓 Gamified Study</h1>
-        <p className="text-center text-gray-600 mb-8">Master your learning journey</p>
+        <h1 className="text-4xl font-bold text-center mb-2">M.A.R.G.O.</h1>
+        <p className="text-center text-gray-600 mb-8">Gamified Study Platform</p>
 
         {!showForm ? (
           <button
             onClick={() => setShowForm(true)}
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg mb-3 transition"
+            className="w-full bg-sage-500 hover:bg-sage-600 text-cream-600 font-bold py-3 px-4 rounded-lg mb-3 transition"
           >
             Get Started
           </button>
@@ -51,7 +51,7 @@ export default function SimpleLogin({ onLogin }: LoginProps) {
               <button
                 type="submit"
                 disabled={!userName.trim()}
-                className="flex-1 bg-green-500 hover:bg-green-600 disabled:bg-gray-400 text-white font-bold py-2 px-4 rounded-lg transition"
+                className="flex-1 bg-sage-500 hover:bg-sage-600 disabled:bg-gray-400 text-cream-600 font-bold py-2 px-4 rounded-lg transition"
               >
                 Continue
               </button>

@@ -136,7 +136,7 @@ export default function Home() {
           onClick={handleLogout}
           className="bg-gray-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-lg transition"
         >
-          logout
+          Log Out
         </button>
       </header>
 
