@@ -51,7 +51,7 @@ export default function SimpleLogin({ onLogin }: LoginProps) {
               <button
                 type="submit"
                 disabled={!userName.trim()}
-                className="flex-1 bg-sage-500 hover:bg-teal-300 disabled:bg-gray-400 text-cream-600 font-bold py-2 px-4 rounded-lg transition"
+                className="flex-1 bg-sage-500 hover:bg-gray-600 disabled:bg-gray-400 text-white-600 font-bold py-2 px-4 rounded-lg transition"
               >
                 Continue
               </button>
@@ -61,7 +61,7 @@ export default function SimpleLogin({ onLogin }: LoginProps) {
                   setShowForm(false);
                   setUserName('');
                 }}
-                className="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-600 font-bold py-2 px-4 rounded-lg transition"
+                className="flex-1 bg-gray-300 hover:bg-gray-500 text-gray-600 font-bold py-2 px-4 rounded-lg transition"
               >
                 Back
               </button>
