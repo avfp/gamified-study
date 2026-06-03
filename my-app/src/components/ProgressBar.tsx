@@ -5,6 +5,17 @@ import React from 'react';
 // We will make this logic dynamic later!
 const XP_PER_LEVEL = 100;
 
+interface Chapter {
+    id: number;
+    title: string;
+    status: 'completed' | 'in-progress' | 'locked'; 
+}
+
+interface RoadMapProps {
+  chapters: Chapter[];
+  onToggleChapterStatus: (id: number) => void; // Function to toggle chapter status
+}
+
 interface ProgressBarProps {
   currentXP: number;
 }
@@ -37,6 +48,30 @@ export default function ProgressBar({ currentXP }: ProgressBarProps) {
       <p className="text-xs text-gray-500 mt-1 italic">
         {remainingXP} / {XP_PER_LEVEL} XP to next level
       </p>
+
+      <ProgressBar currentXP={currentXP} />
+
+      <div className="p-4 bg-yellow-100 rounded-lg border mt-4">
+        <h2 className="text-lg font-bold text-yellow-900">Current Streak: {streak} days</h2>
+        </div>
+       <div className="p-4 bg-yellow-100 rounded-lg border mt-4">
+        <h2 className="text-lg font-bold text-yellow-900">Study Roadmap</h2>
+        <div className="mt-2">
+          {chapters.map((chapter) => (
+            <div key={chapter.id} className="flex items-center justify-between mb-2">
+              <span className={`font-medium ${chapter.status === 'completed' ? 'text-green-600' : chapter.status === 'in-progress' ? 'text-yellow-600' : 'text-gray-500'}`}>
+                {chapter.title}
+              </span>
+              <button 
+                className={`px-2 py-1 text-xs rounded ${chapter.status === 'completed' ? 'bg-green-200 text-green-800' : chapter.status === 'in-progress' ? 'bg-yellow-200 text-yellow-800' : 'bg-gray-200 text-gray-800'}`}
+                onClick={() => onToggleChapterStatus(chapter.id)}
+              >
+                {chapter.status === 'completed' ? 'Completed' : chapter.status === 'in-progress' ? 'In Progress' : 'Locked'}
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
