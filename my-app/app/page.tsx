@@ -129,14 +129,14 @@ export default function Home() {
       {/* Header */}
       <header className="flex justify-between items-center mb-8">
         <div>
-          <h1 className="text-4xl font-bold text-bluegray-900"> Gamified Study Platform</h1>
-          <p className="text-gray-600 mt-1">Welcome, <span className="font-bold text-sage-600">{currentUser.userName}</span>!</p>
+          <h1 className="text-4xl font-bold text-bluegray-900"> M.A.R.G.O.</h1>
+          <p className="text-gray-600 mt-1">Hi, <span className="font-bold text-sage-600">{currentUser.userName}</span>!</p>
         </div>
         <button
           onClick={handleLogout}
-          className="bg-red-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-lg transition"
+          className="bg-bluegray-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-lg transition"
         >
-          Logout
+          logout
         </button>
       </header>
 
@@ -147,7 +147,7 @@ export default function Home() {
       {/* Roadmap Section */}
       <div className="mt-8">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold">📚 My Roadmaps</h2>
+          <h2 className="text-3xl font-bold">roadmaps</h2>
           <button
             onClick={() => {
               setEditingRoadmap(null);
