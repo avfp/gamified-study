@@ -43,7 +43,7 @@ export default function SimpleLogin({ onLogin }: LoginProps) {
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
                 placeholder="Enter your name"
-                className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage-500"
                 autoFocus
               />
             </div>
@@ -51,7 +51,7 @@ export default function SimpleLogin({ onLogin }: LoginProps) {
               <button
                 type="submit"
                 disabled={!userName.trim()}
-                className="flex-1 bg-sage-500 hover:bg-sage-600 disabled:bg-gray-400 text-cream-600 font-bold py-2 px-4 rounded-lg transition"
+                className="flex-1 bg-sage-500 hover:bg-teal-300 disabled:bg-gray-400 text-cream-600 font-bold py-2 px-4 rounded-lg transition"
               >
                 Continue
               </button>
@@ -61,7 +61,7 @@ export default function SimpleLogin({ onLogin }: LoginProps) {
                   setShowForm(false);
                   setUserName('');
                 }}
-                className="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg transition"
+                className="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-600 font-bold py-2 px-4 rounded-lg transition"
               >
                 Back
               </button>
