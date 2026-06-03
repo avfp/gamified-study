@@ -129,12 +129,12 @@ export default function Home() {
       {/* Header */}
       <header className="flex justify-between items-center mb-8">
         <div>
-          <h1 className="text-4xl font-bold text-gray-900">🎓 Gamified Study Platform</h1>
-          <p className="text-gray-600 mt-1">Welcome, <span className="font-bold text-blue-600">{currentUser.userName}</span>!</p>
+          <h1 className="text-4xl font-bold text-bluegray-900"> Gamified Study Platform</h1>
+          <p className="text-gray-600 mt-1">Welcome, <span className="font-bold text-sage-600">{currentUser.userName}</span>!</p>
         </div>
         <button
           onClick={handleLogout}
-          className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition"
+          className="bg-red-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-lg transition"
         >
           Logout
         </button>
