@@ -1,7 +1,7 @@
 // XP is calculated by number of minutes studied * the difficulty of the work
 // Bonus XP comes from Streak (consecutive days studied)
 
-export const calculate XP = (
+export const calculateXP = (
     minutes: number,
     difficultyMultiplier: number,
     streak: number
