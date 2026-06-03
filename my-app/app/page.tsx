@@ -2,6 +2,7 @@
 import { useLocalStorage } from '../src/hooks/useLocalStorage';
 import Dashboard from '../src/components/Dashboard';
 import InputForm from '../src/components/InputForm';
+import { calculateNewStreak } from '../src/lib/streakLogic';
 
 export default function Home() {
   const [totalXP, setTotalXP] = useLocalStorage('study-xp',0);
