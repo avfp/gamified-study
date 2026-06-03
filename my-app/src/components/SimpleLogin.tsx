@@ -20,7 +20,7 @@ export default function SimpleLogin({ onLogin }: LoginProps) {
   };
 
   return (
-    <div className="fixed inset-0 bg-gradient-to-br from-sage-500 to-cream-600 flex items-center justify-center">
+    <div className="fixed inset-0 bg-gradient-to-br from-sage-500 to-white-600 flex items-center justify-center">
       <div className="bg-mint p-8 rounded-xl shadow-2xl max-w-md w-full mx-4">
         <h1 className="text-4xl font-bold text-center mb-2">M.A.R.G.O.</h1>
         <p className="text-center text-gray-600 mb-8">Gamified Study Platform</p>
