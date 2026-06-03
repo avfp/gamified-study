@@ -1,32 +1,51 @@
 'use client';
 import React from 'react';
 
-//Example roadmap component to outline future plans for the platform. This is a static component for now, but we can make it dynamic later by fetching roadmap items from an API or CMS.
-const chapters = [
-    {id: 1, title: 'Basics', status: 'completed'},
-    {id: 2, title: 'Intermediate Concepts', status: 'in-progress'},
-    {id: 3, title: 'Advanced Techniques', status: 'locked'},
-]
-export default function Roadmap() {
+interface RoadmapItem {
+  id: number;
+  title: string;
+  status: 'completed' | 'in-progress' | 'locked';
+}
+
+interface RoadmapProps {
+  roadmap: RoadmapItem[];
+}
+
+export default function Roadmap({ roadmap }: RoadmapProps) {
+  const completedCount = roadmap.filter((item) => item.status === 'completed').length;
+
   return (
-    <div className="p-6 border rounded-xl shadow-md bg-white">
-      <h1 className="text-2xl font-extrabold text-gray-900 mb-4">Roadmap</h1>
-      <p className="text-gray-700 mb-4">
-        This is where we will outline the future plans and features for our gamified learning platform. 
-        Stay tuned for updates and new functionalities!
+    <div className="p-6 border rounded-xl shadow-md bg-white mt-6">
+      <h2 className="text-2xl font-bold mb-2">📚 Study Roadmap</h2>
+      <p className="text-gray-600 mb-4 text-sm">
+        Progress: {completedCount}/{roadmap.length} completed
       </p>
-      <ul className="list-disc list-inside text-gray-700">
-        {chapters.map((chapter) => (
-          <li key={chapter.id}>
-            <span className={`font-medium ${chapter.status === 'completed' ? 'text-green-600' : chapter.status === 'in-progress' ? 'text-yellow-600' : 'text-gray-500'}`}>
-              {chapter.title}
-            </span>
-            <span className="ml-2 text-sm">
-              ({chapter.status})
-            </span>
-          </li>
+      <div className="space-y-3">
+        {roadmap.map((item) => (
+          <div
+            key={item.id}
+            className={`p-3 rounded-lg border-l-4 ${
+              item.status === 'completed'
+                ? 'bg-green-50 border-green-500'
+                : item.status === 'in-progress'
+                ? 'bg-yellow-50 border-yellow-500'
+                : 'bg-gray-50 border-gray-300'
+            }`}
+          >
+            <div className="flex items-center gap-3">
+              <div className="text-xl">
+                {item.status === 'completed' && '✅'}
+                {item.status === 'in-progress' && '⏳'}
+                {item.status === 'locked' && '🔒'}
+              </div>
+              <div className="flex-1">
+                <h3 className="font-semibold text-gray-900">{item.title}</h3>
+                <p className="text-xs text-gray-600 capitalize">{item.status}</p>
+              </div>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

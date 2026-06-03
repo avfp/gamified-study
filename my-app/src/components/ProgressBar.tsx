@@ -11,14 +11,12 @@ interface Chapter {
 
 interface ProgressBarProps {
   currentXP: number;
-  streak?: number;
   chapters?: Chapter[];
   onToggleChapterStatus?: (id: number) => void;
 }
 
 export default function ProgressBar({ 
   currentXP, 
-  streak = 0, 
   chapters = [], 
   onToggleChapterStatus 
 }: ProgressBarProps): React.ReactElement {
@@ -52,11 +50,6 @@ export default function ProgressBar({
       <p className="text-xs text-gray-500 mt-1 italic">
         {remainingXP} / {XP_PER_LEVEL} XP to next level
       </p>
-
-      {/* Streak Display */}
-      <div className="p-4 bg-yellow-100 rounded-lg border mt-4">
-        <h2 className="text-lg font-bold text-yellow-900">Current Streak: {streak} days</h2>
-      </div>
 
       {/* Study Roadmap */}
       <div className="p-4 bg-yellow-100 rounded-lg border mt-4">
